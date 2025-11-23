@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Schedule Appointment</h2>
+<form method="post">
+  <div class="mb-3">
+    <label>Patient</label>
+    <select name="patient_id" class="form-select" required>
+      {% for p in patients %}
+      <option value="{{ p.patient_id }}">{{ p.patient_id }} - {{ p.name }} (Dr. {{ p.doctor }})</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Schedule</button>
+</form>
+{% endblock %}

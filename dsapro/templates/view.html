@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>All Patients ({{ patients|length }})</h2>
+{% if patients %}
+<table class="table table-striped">
+  <thead><tr>
+  <th>ID</th><th>Name</th><th>Age</th><th>Disease</th><th>Doctor</th><th>Registered</th><th>Actions</th>
+</tr></thead>
+
+  <tbody>
+  {% for p in patients %}
+  <tr>
+    <td>{{ p.patient_id }}</td>
+    <td>{{ p.name }}</td>
+    <td>{{ p.age }}</td>
+    <td>{{ p.disease }}</td>
+    <td>{{ p.doctor }}</td>
+    <td>{{ p.registered_at }}</td>
+    <td>
+      <a href="{{ url_for('update', pid=p.patient_id) }}" class="btn btn-sm btn-primary">Edit</a>
+      <form method="post" action="{{ url_for('delete', pid=p.patient_id) }}" class="d-inline">
+        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete?')">Delete</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="text-muted">No patients registered yet.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+html, body {
+  overflow-x: hidden;
+}
+
+/* Make room for the fixed navbar */
+body {
+  padding-top: 80px; /* space below navbar */
+}
+
+/* Add margins around navbar itself */
+.custom-navbar {
+  padding-left: 25px;
+  padding-right: 25px;
+ 
+         /* rounded edges for nicer look */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);  /* soft shadow */
+     /* adjust width after adding left/right margin */
+}
+
+.home {
+    margin-top: 30px;
+}
+
+.select-gender {
+  color: gray;
+}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Patients by Doctor</h2>
+<form method="post" class="mb-4">
+  <div class="input-group">
+    <input name="doctor" class="form-control" placeholder="Doctor name" required>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+
+{% if results %}
+<table class="table table-striped">
+  <thead><tr><th>ID</th><th>Name</th><th>Age</th><th>Disease</th><th>Registered</th></tr></thead>
+  <tbody>
+  {% for p in results %}
+  <tr>
+    <td>{{ p.patient_id }}</td>
+    <td>{{ p.name }}</td>
+    <td>{{ p.age }}</td>
+    <td>{{ p.disease }}</td>
+    <td>{{ p.registered_at }}</td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}

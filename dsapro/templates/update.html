@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Patient ID: {{ patient.patient_id }}</h2>
+<form method="post">
+  <div class="mb-3"><input name="name" class="form-control" value="{{ patient.name }}" placeholder="Leave blank to keep"></div>
+  <div class="mb-3"><input name="age" type="number" class="form-control" value="{{ patient.age }}" placeholder="Leave blank to keep"></div>
+  <div class="mb-3"><input name="disease" class="form-control" value="{{ patient.disease }}" placeholder="Leave blank to keep"></div>
+  <div class="mb-3"><input name="doctor" class="form-control" value="{{ patient.doctor }}" placeholder="Leave blank to keep"></div>
+  <button type="submit" class="btn btn-success">Update</button>
+  <a href="{{ url_for('view_patients_route') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Register New Patient</h2>
+<form method="post">
+  <div class="mb-3">
+    <input name="name" class="form-control" placeholder="Full Name" required>
+  </div>
+
+  <div class="mb-3">
+    <input name="age" type="number" class="form-control" placeholder="Age" required>
+  </div>
+
+ 
+
+  <div class="mb-3">
+    <input name="disease" class="form-control" placeholder="Disease" required>
+  </div>
+
+  <div class="mb-3">
+    <input name="doctor" class="form-control" placeholder="Assigned Doctor" required>
+  </div>
+
+  <button type="submit" class="btn btn-success">Register</button>
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}
+ 
